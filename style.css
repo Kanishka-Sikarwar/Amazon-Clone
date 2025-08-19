@@ -248,3 +248,135 @@ ul a {
     font-size: 0.7rem;
     text-align: center;
 }
+/* ===========================
+   RESPONSIVE OVERRIDES ONLY
+   (desktop ko as-is chhoda hai)
+   =========================== */
+
+/* ——— Large tablets / small laptops ——— */
+@media (max-width: 1200px) {
+  /* Shop: 3 columns */
+  .box {
+    width: 31%;
+  }
+}
+
+/* ——— Tablets (≤ 992px) ——— */
+@media (max-width: 992px) {
+  /* Navbar thoda wrap ho sake */
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  /* Search bar: fix width → fluid (desktop jaisa hi look, bas shrink ho sake) */
+  .nav-search {
+    width: 80%;
+    max-width: 620px;   /* desktop cap same */
+    min-width: 260px;
+    margin: 6px 0;
+  }
+
+  /* Panel text ko thodi jagah do */
+  .panel {
+    gap: 10px;
+    padding: 0 12px;
+  }
+  .panel-ops {
+    width: auto;   /* 70% se free, taaki wrap ho sake */
+  }
+
+  /* Shop: 2 columns */
+  .box {
+    width: 48%;
+    margin-top: 12px;
+  }
+
+  /* Footer columns ko breathe space */
+  .foot-panel2 {
+    height: auto;         /* fixed 500px hata diya chhote screen pe */
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 12px;
+  }
+  .foot-panel3 {
+    height: auto;
+    padding: 14px 10px;
+  }
+}
+
+/* ——— Mobiles (≤ 768px) ——— */
+@media (max-width: 768px) {
+  /* Navbar vertical stack + center */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;       /* 60px se free so content wrap ho */
+    padding: 10px 12px;
+  }
+
+  /* location/address + sign-in lines ko compact */
+  .add-first { font-size: 0.8rem; margin-left: 8px; }
+  .add-second { font-size: 0.95rem; }
+
+  /* Search full width */
+  .nav-search {
+    width: 100%;
+    margin: 8px 0 0;
+  }
+
+  /* Panel single line na ho to wrap */
+  .panel {
+    height: auto;      /* 40px se free */
+    padding: 8px 12px;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .panel-ops p {
+    margin-left: 10px;
+  }
+
+  /* Hero: message ko thodi extra width */
+  .hero-msg {
+    width: 92%;
+    margin-bottom: 18px;
+    text-align: center;
+    padding: 8px 10px;
+  }
+
+  /* Shop: still 2 columns on bigger phones, readable */
+  .box {
+    width: 48%;
+  }
+
+  /* Footer spacing */
+  ul { flex: 1 1 45%; } /* 2 columns of lists */
+}
+
+/* ——— Small Mobiles (≤ 480px) ——— */
+@media (max-width: 480px) {
+  /* Navbar tighter */
+  .navbar {
+    gap: 6px;
+  }
+
+  /* Search compact */
+  .search-select { width: 46px; }
+  .search-icon { width: 42px; }
+
+  /* Shop: 1 column full width */
+  .box {
+    width: 92%;
+    margin-top: 12px;
+  }
+
+  /* Footer lists: single column */
+  ul { flex: 1 1 100%; }
+
+  .pages, .copyright {
+    font-size: 0.68rem;
+    padding-top: 6px;
+  }
+}
